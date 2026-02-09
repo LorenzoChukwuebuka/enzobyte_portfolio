@@ -30,7 +30,7 @@
     <meta property="og:url" content="@yield('og_url', url()->current())">
     <meta property="og:title" content="@yield('og_title', setting('site_name', 'Enzobyte Technology'))">
     <meta property="og:description" content="@yield('og_description', setting('meta_description', 'Transform your business with cutting-edge technology solutions.'))">
-    <meta property="og:image" content="@yield('og_image', asset(setting('site_logo') ?? '/images/og-image.jpg'))">
+    <meta property="og:image" content="@yield('og_image', asset(setting('site_logo') ?? '/storage/images/enzobyte_logo.png'))">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:site_name" content="{{ setting('site_name', 'Enzobyte Technology') }}">
@@ -46,7 +46,7 @@
 
     <meta name="twitter:description" content="@yield('twitter_description', setting('meta_description', 'Transform your business with cutting-edge technology solutions.'))">
 
-    <meta name="twitter:image" content="@yield('twitter_image', asset(setting('site_logo') ?? '/images/og-image.jpg'))">
+    <meta name="twitter:image" content="@yield('twitter_image', asset(setting('site_logo') ?? '/storage/images/enzobyte_logo.png'))">
 
     {{-- =========================
          SEO Enhancements
@@ -56,15 +56,13 @@
     <meta name="language" content="English">
     <meta name="revisit-after" content="7 days">
 
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('/storage/images/enzobyte_logo.png') }}">
+    {{-- <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('/images/favicon-16x16.png') }}">
+<link rel="shortcut icon" href="{{ asset('/images/favicon.ico') }}"> --}}
 
 
     @verbatim
-       
-        <!-- =======================
-                 Enzobyte SEO & Schema
-                 ======================= -->
-
-        <!-- Main Organization + LocalBusiness Schema -->
         <script type="application/ld+json">
 @json([
     "@context" => "https://schema.org",
@@ -140,13 +138,7 @@
 ])
 </script>
         @endif
-
-
-
     @endverbatim
-
-
-
 </head>
 
 <body class="antialiased">
